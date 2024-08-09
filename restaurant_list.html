@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+        }
+        .nav{
+            display:flex;
+            
+            text-align: center;
+        }
+        .display{
+            display: flex;
+        }
+
+        .img1{
+            width: 100vw;
+            height:90vh;
+        }
+        .nav-para{
+            padding-left:400px ;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            color:#e0e0e0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(9px);
+            -webkit-backdrop-filter: blur(9px);
+        }
+        .wcu-section {
+           background-color: #f9fbfe;
+        }
+
+        .wcu-section-heading {
+            color: #183b56;
+            font-family: "Roboto";
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .wcu-section-description {
+            color: #5a7184;
+            font-family: "Roboto";
+            font-size: 16px;
+        }
+
+        .wcu-card {
+            text-align: center;
+            background-color: white;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #e5eaf4;
+            border-radius: 16px;
+        }
+
+        .wcu-card-image {
+            width: 87px;
+            height: 90px;
+        }
+
+        .wcu-card-title {
+            color: #323f4b;
+            font-family: "Roboto";
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .wcu-card-description {
+            color: #7b8794;
+            font-family: "Roboto";
+            font-size: 16px;
+        }
+
+        .offers {
+            color: #323f4b;
+            font-style: italic;
+            font-weight: 600;
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        .restaurant-list {
+            
+            list-style: none;
+            padding: 0;
+        }
+        .restaurant-item {
+            padding: 15px;
+            background: #ffffff;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .restaurant-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .restaurant-item a {
+            text-decoration: none;
+            color: #007BFF;
+            transition: color 0.3s;
+        }
+        .restaurant-item a:hover {
+            color: #0056b3;
+        }
+        .explore-menu-section {
+        background-color: white;
+        margin: 20px;
+        padding-left: 100px;
+        
+        }
+
+        .menu-section-heading {
+            color: #183b56;
+            font-family: "Roboto";
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .menu-item-image {
+            height: 250px;
+            border-radius: 16px;
+        }
+
+        .menu-card-title {
+            color: #323f4b;
+            font-family: "Roboto";
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 24px;
+        }
+
+        .menu-item-link {
+            color: #d0b200;
+            font-family: "Roboto";
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .menu-item-card {
+            border-radius: 16px;
+            transition: 1s;
+            padding:30px;
+        }
+        .menu-item-card:hover{
+            transform: scale(1.15);
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination a {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .pagination a:hover {
+            background: #0056b3;
+        }
+        .pagination span {
+            margin: 0 5px;
+            padding: 10px 20px;
+            background: #e0e0e0;
+            color: #555;
+            border-radius: 5px;
+        }
+        .img2{
+            
+            border-radius: 10px;
+            height: 50px;
+        }
+        .orginal-nav{
+            margin-top: 8px;
+            margin-left: 50px;
+            display: flex;
+            margin-right: 20px;
+        }
+        .anchor{
+            color:black;
+            margin-left: auto;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        .button1{
+            color:black;
+            border-width: 0px;
+            border-radius: 10px;
+            margin-top: 20px;
+            height: 40px;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        .menu{
+            padding-top: 5px;
+            text-align: center;
+        }
+        .row1{
+            
+            margin: 50px;
+        }
+        .wuc{
+            display: flex;
+        }
+        .col-12{
+            margin: 10px;
+        }
+        .text1{
+            margin: 30px;
+            display: flex;
+        }
+        .input1{
+            width: 250px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        .text2{
+              margin-left: 50px;
+        }
+        .text3{
+            margin: auto;
+        }
+        .heading1{
+            color: wheat;
+            font-family: libre baskerville;
+        }
+        .background1{
+            background-image: url("https://wallpapers.com/images/high/surreal-vista-of-a-bustling-urban-skyline-in-4k-resolution-eae11l38l12zh2qw.webp");
+            height:auto;
+            width:100vw;
+           
+            text-align: center;
+            background-size: cover;
+        }
+        
+        .text5{
+            color:black;
+        }
+    </style>
+    
+</head>
+
+<body>
+  <div id="main1">
+        <div class="orginal-nav" >
+            <div >
+                <a href="#navimage "><img  src="https://upload.wikimedia.org/wikipedia/commons/7/75/Zomato_logo.png" class="img2"/></a>
+            </div>
+            <div class="anchor">
+                <a class="anchor" href="#exploreMenuSection">view menu</a>
+            </div>
+            <a class="button1">view restaurant list</a>
+        
+                <a class="button1" href="#exploreMenuSection">why Choose us</a>
+            
+        </div>
+        <div class="nav" id="navimage">
+            <img class="img1" src="https://wallpapers.com/images/hd/food-4k-anl1yr892h6ccjeb.jpg"/>
+        </div>
+        <div class="row1">
+            <div class="col-12">
+                <h1 class="wcu-section-heading">Why Choose Us?</h1>
+                <p class="wcu-section-description">
+                    We use both original recipes and classic versions of famous food
+                    items.
+                </p>
+            </div>
+            <div class="wuc">
+            <div class="col-12 col-md-4">
+                <div class="wcu-card p-3 mb-3">
+                    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/food-serve.png" class="wcu-card-image" />
+                    <h1 class="wcu-card-title mt-3">Food Service</h1>
+                    <p class="wcu-card-description">
+                        Experience fine dining at the comfort of your home. All our
+                        orders are carefully packed and arranged to give you the nothing
+                        less than perfect.
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="wcu-card p-3 mb-3">
+                    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/fruits-img.png" class="wcu-card-image" />
+                    <h1 class="wcu-card-title mt-3">Fresh Food</h1>
+                    <p class="wcu-card-description">
+                        The Fresh Food group provides fresh-cut fruits and vegetables
+                        directly picked from our partner farms and farm houses so that
+                        you always get them tree to plate.
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="wcu-card p-3 mb-3">
+                    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/offers-img.png" class="wcu-card-image" />
+                    <h1 class="wcu-card-title mt-3">Best Offers</h1>
+                    <p class="wcu-card-description">
+                        Food Coupons & Offers upto
+                        <span class="offers">50% OFF</span>
+                        and Exclusive Promo Codes on All Online Food Orders.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="explore-menu-section pt-5 pb-5" id="exploreMenuSection">
+          <div class="menu">
+                <h1 class="menu-section-heading">Explore Menu</h1>
+          </div>
+            <div class="display">
+                <div class="section-menu">
+                    <div class="shadow menu-item-card p-3 mb-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-ginger-fried-img.png" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Non-Veg Starters</h1>
+                        <a href="https://nvstarter.ccbp.tech/" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right-short" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-menu">
+                    <div class="shadow menu-item-card p-3 mb-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-veg-starters-img.png" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Veg Starters</h1>
+                        <a href="https://vgspage.ccbp.tech/" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-menu">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-soup-img.png" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Soups</h1>
+                        <a href="https://soupspg.ccbp.tech/" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="section-menu">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-grilled-seafood-img.png" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Fish & Sea food</h1>
+                        <a href="https://fsfood.ccbp.tech/" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="display">    
+                <div class="section-menu">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-hyderabadi-biryani-img.png" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Main Course</h1>
+                        <a href="https://maincoursepage.ccbp.tech/" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-menu">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-mushroom-noodles-img.png" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Noodles</h1>
+                        <a href="https://noodlespage.ccbp.tech/" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-menu">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-gluten-img.png" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Salads</h1>
+                        <a href="https://saladpage.ccbp.tech/" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="section-menu">
+                    <div class="menu-item-card shadow p-3 mb-3">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-coffee-bourbon-img.png" class="menu-item-image w-100" />
+                        <h1 class="menu-card-title">Desserts</h1>
+                        <a href="https://dessertpage.ccbp.tech/" class="menu-item-link">
+                            View All
+                            <svg width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="#d0b200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <div id="main2" class="background1">
+        <div class="container" >
+            <h1 class="heading1">Restaurant List</h1>
+            <form id="filterForm" method="get" action="/restaurants">
+                <div class="text1">
+                    <div class="text2">
+                        <label for="country">Country_Code:</label>
+                        <input class="input1" type="text" id="country" name="country">
+                    </div>
+                    <div class="text3">
+                        <label for="min_average_cost">Min Average Cost for Two:</label>
+                        <input class="input1" type="number" id="min_average_cost" name="min_average_cost">
+                    </div>
+                </div>
+                <div class="text1">
+                    <div class="text2">
+                        <label for="max_average_cost">Max Average Cost for Two:</label>
+                        <input class="input1" type="number" id="max_average_cost" name="max_average_cost">
+                    </div>
+                    <div class="text3">
+                    <label for="cuisines">Cuisines:</label>
+                    <input class="input1" type="text" id="cuisines" name="cuisines">
+                </div>
+                </div>
+                <div class="text1">
+                    <div class="text2">
+                <label for="search">Restaurant by ID:</label>
+                <input class="input1" type="text" id="search" name="search">
+                
+                <button type="submit">Filter</button>
+            </div>
+        </div>
+            </form>
+            <ul class="restaurant-list">
+                {% for restaurant in restaurants %}
+                <li class="restaurant-item color1">
+                    <div class="text5">
+                        <strong>{{ restaurant.Restaurant_Name }}</strong>
+                        <p>{{ restaurant.City }}</p>
+                        <p>{{ restaurant.Cuisines }}</p>
+                    </div>
+                    <a href="/restaurant/{{ restaurant.Restaurant_ID }}">View Details</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="pagination">
+                {% if page > 1 %}
+                <a href="/restaurants?page={{ page-1 }}&per_page={{ per_page }}">Previous</a>
+                {% else %}
+                <span>Previous</span>
+                {% endif %}
+
+                {% if page * per_page < total_restaurants %}
+                <a href="/restaurants?page={{ page+1 }}&per_page={{ per_page }}">Next</a>
+                {% else %}
+                <span>Next</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

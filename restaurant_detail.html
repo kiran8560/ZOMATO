@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ restaurant.Restaurant_Name }} Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 95%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background-color:transparent;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        .restaurant-details {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: 1s;
+        }
+        .restaurant-details:hover{
+            transform: scale(1.1);
+        }
+        .restaurant-details p {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f1f3f5;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .restaurant-details p strong {
+            color: #6c757d;
+            min-width: 150px;
+            display: inline-block;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        a:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        .background1{
+            background-image: url("https://t3.ftcdn.net/jpg/06/36/21/14/360_F_636211430_qRSu5YAID8IUODItGaqUxj2cvMfzVqqV.jpg");
+            height: 150vh;
+            width: 100vw;
+            background-size: cover;
+        }
+        .container-heading{
+            margin: 45px;
+            
+        }
+        .color1{
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="background1">
+    <div class="container">
+        <div class="container-heading">
+           <h1 class="color1">{{ restaurant['name'] }} Details</h1>
+        </div>
+        <div class="restaurant-details">
+            <p><strong>Restaurant ID:</strong> <span>{{ restaurant['restaurant_id'] }}</span></p>
+            <p><strong>City:</strong> <span>{{ restaurant['city'] }}</span></p>
+            <p><strong>Locality:</strong> <span>{{ restaurant['locality'] }}</span></p>
+            <p><strong>Address:</strong> <span>{{ restaurant['address'] }}</span></p>
+            <p><strong>Cuisines:</strong> <span>{{ restaurant['cuisines'] }}</span></p>
+            <p><strong>Average Cost for Two:</strong> <span>{{ restaurant['average_cost_for_two'] }}</span></p>
+            <p><strong>Currency:</strong> <span>{{ restaurant['currency'] }}</span></p>
+            <p><strong>Has Table Booking:</strong> <span>{{ restaurant['has_table_booking'] }}</span></p>
+            <p><strong>Has Online Delivery:</strong> <span>{{ restaurant['has_online_delivery'] }}</span></p>
+            <p><strong>Is Delivering Now:</strong> <span>{{ restaurant['is_delivering_now'] }}</span></p>
+            <p><strong>Switch to Order Menu:</strong> <span>{{ restaurant['switch_to_order_menu'] }}</span></p>
+            <p><strong>Price Range:</strong> <span>{{ restaurant['price_range'] }}</span></p>
+            <p><strong>Aggregate Rating:</strong> <span>{{ restaurant['aggregate_rating'] }}</span></p>
+            <p><strong>Rating Color:</strong> <span>{{ restaurant['rating_color'] }}</span></p>
+            <p><strong>Rating Text:</strong> <span>{{ restaurant['rating_text'] }}</span></p>
+            <p><strong>Votes:</strong> <span>{{ restaurant['votes'] }}</span></p>
+            <p><strong>Longitude:</strong> <span>{{ restaurant['longitude'] }}</span></p>
+            <p><strong>Latitude:</strong> <span>{{ restaurant['latitude'] }}</span></p>
+        </div>
+        <a href="/restaurants">Back to Restaurant List</a>
+    </div>
+</div>
+</body>
+</html>
